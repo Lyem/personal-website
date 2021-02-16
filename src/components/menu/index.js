@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Navigation = styled.nav`
     background-color: ${({ theme }) => theme.colors.primary};
@@ -18,8 +19,10 @@ const Navigation = styled.nav`
 
     img{
         margin-top: 5%;
+        border-color: ${({ theme }) => theme.colors.select};
+        border-style: solid;
         border-radius: 100%;
-        width: 30%;
+        width: 40%;
     }
 
     h3{
@@ -27,7 +30,7 @@ const Navigation = styled.nav`
     }
 
     @media screen and (max-width: 700px) {
-        img, h3{
+        img, h3, a{
             display: none;
         }
         width: 0px;
@@ -40,9 +43,9 @@ export default function Menu(){
             <img src="profile.jpg" />
             <h3>Rafael Corrêa de Melo</h3>
             <div>
-                <a href="teste">Home</a>
-                <a href="teste">Portifolio</a>
-                <a href="teste">Sobre</a>
+                <Link href="/">Home</Link>
+                <Link href="/portifolio">Portifolio</Link>
+                <Link href="contact">Contato</Link>
             </div>
         </Navigation>
     )
